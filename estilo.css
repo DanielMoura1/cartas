@@ -1,6 +1,10 @@
-
 body{
-    background:green;
+    background:rgb(238, 249, 191);
+}
+
+.tempo{
+    margin-top: 5px;
+    font-size: 20px;
 }
 .fundo{
     width: 100vw;
@@ -8,65 +12,76 @@ body{
     display: flex;
     flex-wrap: wrap;
 
-    background: green;
+    background: rgb(238, 249, 191);
+    margin-left: 100px;
 }
 .texto{
     font-size: 42px;
-    margin-left: 15px;
+    margin-left: 200px;
+    margin-bottom: 30PX;
+    background:  rgb(238, 249, 191);
+    height:300px;
+    width:1200px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
     
 }
 .carta{
+    
     width:240px;
     height: 480px;
     margin-left: 15px;
-    margin-right:10px;
+    margin-right:30px;
     margin-bottom: 10px;
+
+    
     
 
-    background:red;
+    background:rgb(167, 233, 175);
+}
+
+
+img{
+    
+    width:120px;
+    height: 240px;
+    margin-left:60px;
+    margin-top: 110px;
+
+    
 }
 .morto{
     display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.carta:active { 
+    
+    transform: skewY(50deg);
+    transform-origin: 80% 80%;   
+}
+.relogio{
+    width:50px;
+    height:200px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+   
+    margin-left: 100px;
+}
+.caixa{
+    display: flex;
+    margin-top: 50px;
+    
+    
+}
+@media (max-width:614px){
+    .fundo{
+        width: 600px;
+        
+        margin-left: 100px;
+    }
+}
 
 

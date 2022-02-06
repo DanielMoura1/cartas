@@ -5,13 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href="estilo.css">
+    
     <title>Document</title>
 </head>
 <body>
+    
+    <div class="caixa">
     <div class="texto">
         <h1>
-            jogo boladão brabo
+            PARROT CARD GAME
         </h1>
+    </div>
+    <div class="relogio">
+        <h1>Tempo</h1>
+        <h1 class="tempo">0</h1>
+
+    </div>
     </div>
     <div class="fundo">
         
@@ -21,29 +30,35 @@
 
         
 
-        <div class="carta morto" id='vivo1'> </div>
-        <div class="carta morto" id='vivo2'> </div>
-        <div class="carta morto" id='vivo3'> </div>
-        <div class="carta morto" id='vivo4'> </div>
-        <div class="carta morto" id='vivo5'>  </div>
-        <div class="carta morto" id='vivo6' >  </div>
-        <div class="carta morto" id='vivo7'> </div>
-        <div class="carta morto" id='vivo8'> </div>
-        <div class="carta morto" id='vivo9'> </div>
-        <div class="carta morto" id='vivo10'> </div>
-        <div class="carta morto" id='vivo11'> </div>
-        <div class="carta morto" id='vivo12'> </div>
-        <div class="carta morto" id='vivo13'> </div>
-        <div class="carta morto" id='vivo14'> </div>
+        <div class="carta morto" id='vivo1' onclick="virar()"> <img id="carta1" src="front.png"> </div>
+        <div class="carta morto" id='vivo2'  onclick="virar2()"> <img id="carta2" src="front.png"></div>
+        <div class="carta morto" id='vivo3'  onclick="virar3()"><img id="carta3" src="front.png"> </div>
+        <div class="carta morto" id='vivo4'  onclick="virar4()"> <img id="carta4" src="front.png"></div>
+        <div class="carta morto" id='vivo5'  onclick="virar5()"> <img id="carta5" src="front.png"> </div>
+        <div class="carta morto" id='vivo6'  onclick="virar6()">  <img id="carta6" src="front.png"></div>
+        <div class="carta morto" id='vivo7'  onclick="virar7()"> <img id="carta7" src="front.png"></div>
+        <div class="carta morto" id='vivo8'  onclick="virar8()"> <img id="carta8" src="front.png"></div>
+        <div class="carta morto" id='vivo9'  onclick="virar9()"> <img id="carta9" src="front.png"></div>
+        <div class="carta morto" id='vivo10'  onclick="virar10()"><img id="carta10" src="front.png"> </div>
+        <div class="carta morto" id='vivo11'  onclick="virar11()"><img id="carta11" src="front.png"> </div>
+        <div class="carta morto" id='vivo12'  onclick="virar12()"><img id="carta12" src="front.png"> </div>
+        <div class="carta morto" id='vivo13'  onclick="virar13()"> <img id="carta13" src="front.png"></div>
+        <div class="carta morto" id='vivo14'  onclick="virar14()"><img id="carta14" src="front.png"> </div>
         
         
         
 
     </div>
     <script>
-        
+        let comparar1
+        let comparar2
+        let baralhojogo =[]
+        const baralho =['unicornparrot.gif','unicornparrot.gif','tripletsparrot.gif','tripletsparrot.gif','revertitparrot.gif','revertitparrot.gif','metalparrot.gif','metalparrot.gif','fiestaparrot.gif','fiestaparrot.gif','explodyparrot.gif','explodyparrot.gif','bobrossparrot.gif','bobrossparrot.gif']
+        function comparador() { 
+	        return Math.random() - 0.5; 
+        }
         function iniciar(){
-            let numero = prompt('insira um numero de 1 ate 14')
+            let numero = prompt('insira um numero par entre 1 e 14')
             while(true){
 
             
@@ -51,7 +66,7 @@
                 return numero
                 break
             }else{
-                numero = prompt('numero invalido. insira um numero de 1 ate 14')
+                numero = prompt('numero invalido. insira um numero par entre 1 e 14')
 
             }
         }
@@ -62,13 +77,648 @@
         
         let numero = iniciar()
         let cont = 1
+        function iniciar2(){
+            while(cont<= numero){
+                document.getElementById('vivo'+cont).style.display='block'
+                baralhojogo.push(baralho[cont-1])
+                cont = cont + 1
+                baralhojogo.sort(comparador)
+            }
+            
+        }
+        iniciar2()
+        let teste =1
+        let teste2 =1
+        let teste3 =1
+        let teste4 =1
+        let teste5 =1
+        let teste6 =1
+        let teste7 =1
+        let teste8 =1
+        let teste9 =1
+        let teste10 =1
+        let teste11 =1
+        let teste12 =1
+        let teste13 =1
+        let teste14 =1
+        let ok = 0
+        let chamar1
+        let chamar2
+        let jogadas = 0
+        let contador = 0
+        let intervalo =0
+        let jogardasfeitaas=0
+        
+        function ultima(funcao,funcao2){
+            funcao
+            funcao2
+                            
+                            
+                            
+                            
 
-        while(cont<= numero){
-            document.getElementById('vivo'+cont).style.display='block'
-            cont = cont + 1
+                            
+        }
+        
+        function comparadorcarta(){
+        
+
+                    if(ok == 3 && comparar1 ==comparar2){
+                        ok = 7
+                        ultima(chamar1(),chamar2())
+                        jogadas += 1
+                        console.log(jogadas*2)
+                        jogardasfeitaas =jogardasfeitaas+2
+                        fimDeJogo()
+                    }if(ok ==3 ){
+                        
+                        console.log(ok+ ' antes de ultima')
+                        ok = ok + 1
+                        
+                        
+                        ultima(chamar1(),chamar2())
+                        
+                        jogardasfeitaas =jogardasfeitaas+2
+                        
+                        console.log(ok+ ' depois de ultima')
+                        ok = 0
+                    }
+                        
+            }           
+        
+            
+        function virar(){
+            
+            const carta1 =document.getElementById('carta1')
+            console.log(ok+ ' virar1')
+            if(ok >= 7){
+                ok = 0
+                teste = 80
+            }
+            if(ok==4){
+                carta1.src="front.png"
+                teste = 1
+                
+            }
+            
+            if(teste == 1 && ok <3){
+                ok = ok + 1
+                carta1.src=baralhojogo[0]
+                teste = 2
+               
+                if(ok == 2){
+                    
+                    comparar2 = baralhojogo[0]
+                    chamar1 = virar
+                    ok = ok +1
+                    
+                
+                }else if(ok == 1){
+                    comparar1 = baralhojogo[0]
+                    chamar2 = virar
+                    
+
+                }
+                
+            }
+            
+            pausadetempocarta()
+            
+            
+        
+        }
+        function virar2(){
+            
+            const carta2 =document.getElementById('carta2')
+            console.log(ok+ ' virar2')
+            if(ok >=7){
+                ok =0
+                teste2 = 80
+            }
+            if(ok==4){
+                carta2.src="front.png"
+                teste2 = 1
+                
+            }
+            console.log(carta2.src=="front.png")
+            if(teste2 == 1 && ok <3 ){
+                ok = ok + 1
+                carta2.src=baralhojogo[1]
+                teste2 = 2
+               
+                if(ok == 2){
+                    
+                    comparar2 = baralhojogo[1]
+                    chamar1 = virar2
+                    ok = ok +1
+                    
+                
+                }else if(ok == 1){
+                    comparar1 = baralhojogo[1]
+                    chamar2 = virar2
+                    
+                }
+            }
+            
+            pausadetempocarta()
+            
+           
+            
+        }
+        function virar3(){
+            
+            const carta3 =document.getElementById('carta3')
+            console.log(ok+ ' virar3')
+            if(ok >=7){
+                ok =0
+                teste3 =  80
+            }
+            if(ok==4){
+                carta3.src="front.png"
+                teste3 = 1
+                
+            }
+            console.log(carta3.src=="front.png")
+            if(teste3 == 1 && ok <3){
+                ok = ok + 1
+                carta3.src=baralhojogo[2]
+                teste3 = 2
+                if(ok == 2){
+                    comparar2 = baralhojogo[2]
+                    chamar1 = virar3
+                    ok = ok +1
+                    
+                
+                }else if(ok == 1){
+                    comparar1 = baralhojogo[2]
+                    chamar2 = virar3
+                    
+                }
+            }
+            
+            pausadetempocarta()
+           
+            
+        }
+        function virar4(){
+            
+            const carta4 =document.getElementById('carta4')
+            console.log(ok+ ' virar4')
+            if(ok >=7){
+                ok =0
+                teste4 =  80
+            }
+            if(ok==4){
+                
+                carta4.src="front.png"
+                teste4 = 1
+                
+            }
+            console.log(carta4.src=="front.png")
+            if(teste4 == 1 && ok <3 ){
+                ok = ok + 1
+                carta4.src=baralhojogo[3]
+                teste4 = 2
+                if(ok == 2){
+                    comparar2 = baralhojogo[3]
+                    chamar1 = virar4
+                    ok = ok +1
+                    
+                
+                }else if(ok == 1){
+                    comparar1 = baralhojogo[3]
+                    chamar2 = virar4
+                    
+                }
+            }
+            
+            pausadetempocarta()
+            
+            
+        }
+        function virar5(){
+            
+            const carta5 =document.getElementById('carta5')
+            console.log(ok+ ' virar5')
+            if(ok >=7){
+                ok =0
+                teste5 =  80
+            }
+            if(ok==4){
+                carta5.src="front.png"
+                teste5 = 1
+                
+            }
+            console.log(carta5.src=="front.png")
+            if(teste5 == 1 && ok <3){
+                ok = ok + 1
+                carta5.src=baralhojogo[4]
+                teste5 = 2
+                if(ok == 2){
+                    comparar2 = baralhojogo[4]
+                    chamar1 = virar5
+                    ok = ok +1
+
+                
+                }else if(ok == 1){
+                    comparar1 = baralhojogo[4]
+                    chamar2 = virar5
+                   
+                    
+                }
+            }
+            pausadetempocarta()
+            
+            
+        }
+        function virar6(){
+            
+            const carta6 =document.getElementById('carta6')
+            console.log(ok+ ' virar6')
+            if(ok >=7){
+                ok =0
+                teste6 =  80
+            }
+            if(ok==4){
+                carta6.src="front.png"
+                teste6 = 1
+                
+            }
+            console.log(carta6.src=="front.png")
+            if(teste6 == 1 && ok <3 ){
+                ok = ok + 1
+                carta6.src=baralhojogo[5]
+                teste6 = 2
+                if(ok == 2){
+                    comparar2 = baralhojogo[5]
+                    chamar1 = virar6
+                    ok = ok +1
+
+                
+                }else if(ok == 1){
+                    comparar1 = baralhojogo[5]
+                    chamar2 = virar6
+                    
+                }
+            }
+            pausadetempocarta()
+            
+          
+        }
+        function virar7(){
+            
+            const carta7 =document.getElementById('carta7')
+            console.log(ok+ ' virar7')
+            if(ok >=7){
+                ok =0
+                teste7 =  80
+            }
+            if(ok==4){
+                carta7.src="front.png"
+                teste7 = 1
+                
+            }
+            console.log(carta7.src=="front.png")
+            if(teste7 == 1 && ok <3 ){
+                ok = ok + 1
+                carta7.src=baralhojogo[6]
+                teste7 = 2
+                if(ok == 2){
+                    comparar2 = baralhojogo[6]
+                    chamar1 = virar7
+                    ok = ok +1
+
+                
+                }else if(ok == 1){
+                    comparar1 = baralhojogo[6]
+                    chamar2 = virar7
+                    
+                }
+            }
+            pausadetempocarta()
+            
+            
+        }
+        function virar8(){
+            
+            const carta8 =document.getElementById('carta8')
+            console.log(ok+ ' virar8')
+            if(ok >=8){
+                ok =0
+                teste8 =  80
+            }
+            if(ok==4){
+                carta8.src="front.png"
+                teste8 = 1
+                
+            }
+            console.log(carta8.src=="front.png")
+            if(teste8 == 1 && ok <3 ){
+                ok = ok + 1
+                carta8.src=baralhojogo[7]
+                teste8 = 2
+                if(ok == 2){
+                    comparar2 = baralhojogo[7]
+                    chamar1 = virar8
+                    ok = ok +1
+
+                
+                }else if(ok == 1){
+                    comparar1 = baralhojogo[7]
+                    chamar2 = virar8
+                    
+                }
+            }
+            pausadetempocarta()
+            
+            
+        }
+        function virar9(){
+            
+            const carta9 =document.getElementById('carta9')
+            console.log(ok+ ' virar9')
+            if(ok >=8){
+                ok =0
+                teste9 =  80
+            }
+            if(ok==4){
+                carta9.src="front.png"
+                teste9 = 1
+                
+            }
+            console.log(carta9.src=="front.png")
+            if(teste9 == 1 && ok <3 ){
+                ok = ok + 1
+                carta9.src=baralhojogo[8]
+                teste9 = 2
+                if(ok == 2){
+                    comparar2 = baralhojogo[8]
+                    chamar1 = virar9
+                    ok = ok +1
+
+                
+                }else if(ok == 1){
+                    comparar1 = baralhojogo[8]
+                    chamar2 = virar9
+                    
+                }
+            }
+            pausadetempocarta()
+            
+            
+        }
+        function virar10(){
+            
+            const carta10 =document.getElementById('carta10')
+            console.log(ok+ ' virar10')
+            if(ok >=8){
+                ok =0
+                teste10 =  80
+            }
+            if(ok==4){
+                carta10.src="front.png"
+                teste10 = 1
+                
+            }
+            console.log(carta10.src=="front.png")
+            if(teste10 == 1 && ok <3 ){
+                ok = ok + 1
+                carta10.src=baralhojogo[9]
+                teste10 = 2
+                if(ok == 2){
+                    comparar2 = baralhojogo[9]
+                    chamar1 = virar10
+                    ok = ok +1
+
+                
+                }else if(ok == 1){
+                    comparar1 = baralhojogo[9]
+                    chamar2 = virar10
+                    
+                }
+            }
+            pausadetempocarta()
+           
+         
+        }
+        function virar11(){
+            
+            const carta11 =document.getElementById('carta11')
+            console.log(ok+ ' virar11')
+            if(ok >=8){
+                ok =0
+                teste11 =  80
+            }
+            if(ok==4){
+                carta11.src="front.png"
+                teste11 = 1
+                
+            }
+            console.log(carta11.src=="front.png")
+            if(teste11 == 1 && ok <3 ){
+                ok = ok + 1
+                carta11.src=baralhojogo[10]
+                teste11 = 2
+                if(ok == 2){
+                    comparar2 = baralhojogo[10]
+                    chamar1 = virar11
+                    ok = ok +1
+
+                
+                }else if(ok == 1){
+                    comparar1 = baralhojogo[10]
+                    chamar2 = virar11
+                    
+                }
+            }
+            pausadetempocarta()
+            
+            
+        }
+        function virar12(){
+            
+            const carta12 =document.getElementById('carta12')
+            console.log(ok+ ' virar12')
+            if(ok >=8){
+                ok =0
+                teste12 =  80
+            }
+            if(ok==4){
+                carta12.src="front.png"
+                teste12 = 1
+                
+            }
+            console.log(carta12.src=="front.png")
+            if(teste12 == 1 && ok <3 ){
+                ok = ok + 1
+                carta12.src=baralhojogo[11]
+                teste12 = 2
+                if(ok == 2){
+                    comparar2 = baralhojogo[11]
+                    chamar1 = virar12
+                    ok = ok +1
+
+                
+                }else if(ok == 1){
+                    comparar1 = baralhojogo[11]
+                    chamar2 = virar12
+                    
+                }
+            }
+            pausadetempocarta()
+           
+           
+        }
+        function virar13(){
+            
+            const carta13 =document.getElementById('carta13')
+            console.log(ok+ ' virar13')
+            if(ok >=8){
+                ok =0
+                teste13 =  80
+            }
+            if(ok==4){
+                carta13.src="front.png"
+                teste13 = 1
+                
+            }
+            console.log(carta13.src=="front.png")
+            if(teste13 == 1 && ok <3 ){
+                ok = ok + 1
+                carta13.src=baralhojogo[12]
+                teste13 = 2
+                if(ok == 2){
+                    comparar2 = baralhojogo[12]
+                    chamar1 = virar13
+                    ok = ok +1
+
+                
+                }else if(ok == 1){
+                    comparar1 = baralhojogo[12]
+                    chamar2 = virar13
+                    
+                }
+            }
+            pausadetempocarta()
+          
+            
+        }
+        function virar14(){
+            
+            const carta14 =document.getElementById('carta14')
+            console.log(ok+ ' virar14')
+            if(ok >=8){
+                ok =0
+                teste14 =  80
+            }
+            if(ok==4){
+                carta14.src="front.png"
+                teste14 = 1
+                
+            }
+            console.log(carta14.src=="front.png")
+            if(teste14 == 1 && ok <3 ){
+                ok = ok + 1
+                carta14.src=baralhojogo[13]
+                teste14 = 2
+                if(ok == 2){
+                    comparar2 = baralhojogo[13]
+                    chamar1 = virar14
+                    ok = ok +1
+
+                
+                }else if(ok == 1){
+                    comparar1 = baralhojogo[13]
+                    chamar2 = virar14
+                    
+                }
+            }
+            pausadetempocarta()
+          
+          
+        }
+        
+        function fimDeJogo(){
+            if((jogadas*2)==numero){
+                alert('Vitoria')
+                alert('seu numero de jogadas foi: '+jogardasfeitaas)
+                let mais = prompt('quer jogar mais uma ? entao digite "sim"')
+                if(mais == 'sim'){
+                    
+                    document.getElementById('vivo1').style.display='none'
+                    document.getElementById('vivo2').style.display='none'
+                    document.getElementById('vivo3').style.display='none'
+                    document.getElementById('vivo4').style.display='none'
+                    document.getElementById('vivo5').style.display='none'
+                    document.getElementById('vivo6').style.display='none'
+                    document.getElementById('vivo7').style.display='none'
+                    document.getElementById('vivo8').style.display='none'
+                    document.getElementById('vivo9').style.display='none'
+                    document.getElementById('vivo10').style.display='none'
+                    document.getElementById('vivo11').style.display='none'
+                    document.getElementById('vivo12').style.display='none'
+                    document.getElementById('vivo13').style.display='none'
+                    document.getElementById('vivo14').style.display='none'
+                    teste =1
+                    teste2 =1
+                    teste3 =1
+                    teste4 =1
+                    teste5 =1
+                    teste6 =1
+                    teste7 =1
+                    teste8 =1
+                    teste9 =1
+                    teste10 =1
+                    teste11 =1
+                    teste12 =1
+                    teste13 =1
+                    teste14 =1
+                    ok = 0
+                    chamar1
+                    chamar2
+                    jogadas = 0
+                    contador = 0
+                    intervalo =0
+                    jogardasfeitaas=0
+                    carta1.src="front.png"
+                    carta2.src="front.png"
+                    carta3.src="front.png"
+                    carta4.src="front.png"
+                    carta5.src="front.png"
+                    carta6.src="front.png"
+                    carta7.src="front.png"
+                    carta8.src="front.png"
+                    carta9.src="front.png"
+                    carta10.src="front.png"
+                    carta11.src="front.png"
+                    carta12.src="front.png"
+                    baralhojogo =[]
+                    numero=iniciar()
+                    cont = 1
+                    iniciar2()
+                }
+            }
+            
+        }
+        function contar(){
+            contador++
+            document.querySelector('.tempo').innerHTML = contador;
+            if((jogadas*2)==numero){
+                clearInterval(intervalo)
+                
+            }
+        }
+        function tempo(){
+            intervalo = setInterval(contar,1500);
+            
+        }
+        let comparadorcartas2
+        function pausadetempocarta(){
+            setTimeout(comparadorcarta,1000)
         }
         
         
+        tempo()
     </script>
 </body>
 </html>
