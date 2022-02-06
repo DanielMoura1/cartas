@@ -30,20 +30,20 @@
 
         
 
-        <div class="carta morto" id='vivo1' onclick="virar()"> <img id="carta1" src="front.png"> </div>
-        <div class="carta morto" id='vivo2'  onclick="virar2()"> <img id="carta2" src="front.png"></div>
-        <div class="carta morto" id='vivo3'  onclick="virar3()"><img id="carta3" src="front.png"> </div>
-        <div class="carta morto" id='vivo4'  onclick="virar4()"> <img id="carta4" src="front.png"></div>
-        <div class="carta morto" id='vivo5'  onclick="virar5()"> <img id="carta5" src="front.png"> </div>
-        <div class="carta morto" id='vivo6'  onclick="virar6()">  <img id="carta6" src="front.png"></div>
-        <div class="carta morto" id='vivo7'  onclick="virar7()"> <img id="carta7" src="front.png"></div>
-        <div class="carta morto" id='vivo8'  onclick="virar8()"> <img id="carta8" src="front.png"></div>
-        <div class="carta morto" id='vivo9'  onclick="virar9()"> <img id="carta9" src="front.png"></div>
-        <div class="carta morto" id='vivo10'  onclick="virar10()"><img id="carta10" src="front.png"> </div>
-        <div class="carta morto" id='vivo11'  onclick="virar11()"><img id="carta11" src="front.png"> </div>
-        <div class="carta morto" id='vivo12'  onclick="virar12()"><img id="carta12" src="front.png"> </div>
-        <div class="carta morto" id='vivo13'  onclick="virar13()"> <img id="carta13" src="front.png"></div>
-        <div class="carta morto" id='vivo14'  onclick="virar14()"><img id="carta14" src="front.png"> </div>
+        <div class="carta morto" id='vivo1' onclick="virar()" data-identifier="card" data-identifier="back-face" data-identifier="front-face"> <img id="carta1" src="front.png"> </div>
+        <div class="carta morto" id='vivo2'  onclick="virar2()" data-identifier="card" data-identifier="back-face" data-identifier="front-face"> <img id="carta2" src="front.png"></div>
+        <div class="carta morto" id='vivo3'  onclick="virar3()" data-identifier="card" data-identifier="back-face" data-identifier="front-face"><img id="carta3" src="front.png"> </div>
+        <div class="carta morto" id='vivo4'  onclick="virar4()" data-identifier="card" data-identifier="back-face"data-identifier="front-face"> <img id="carta4" src="front.png"></div>
+        <div class="carta morto" id='vivo5'  onclick="virar5()" data-identifier="card" data-identifier="back-face"data-identifier="front-face">  <img id="carta5" src="front.png"> </div>
+        <div class="carta morto" id='vivo6'  onclick="virar6()" data-identifier="card" data-identifier="back-face"data-identifier="front-face">  <img id="carta6" src="front.png"></div>
+        <div class="carta morto" id='vivo7'  onclick="virar7()" data-identifier="card" data-identifier="back-face"data-identifier="front-face"> <img id="carta7" src="front.png"></div>
+        <div class="carta morto" id='vivo8'  onclick="virar8()" data-identifier="card" data-identifier="back-face"data-identifier="front-face">  <img id="carta8" src="front.png"></div>
+        <div class="carta morto" id='vivo9'  onclick="virar9()" data-identifier="card" data-identifier="back-face"data-identifier="front-face">  <img id="carta9" src="front.png"></div>
+        <div class="carta morto" id='vivo10'  onclick="virar10()" data-identifier="card" data-identifier="back-face"data-identifier="front-face"><img id="carta10" src="front.png"> </div>
+        <div class="carta morto" id='vivo11'  onclick="virar11()" data-identifier="card" data-identifier="back-face"data-identifier="front-face"><img id="carta11" src="front.png"> </div>
+        <div class="carta morto" id='vivo12'  onclick="virar12()" data-identifier="card" data-identifier="back-face"data-identifier="front-face"><img id="carta12" src="front.png"> </div>
+        <div class="carta morto" id='vivo13'  onclick="virar13()" data-identifier="card" data-identifier="back-face"data-identifier="front-face"> <img id="carta13" src="front.png"></div>
+        <div class="carta morto" id='vivo14'  onclick="virar14()" data-identifier="card" data-identifier="back-face"data-identifier="front-face"><img id="carta14" src="front.png"> </div>
         
         
         
@@ -640,8 +640,8 @@
         
         function fimDeJogo(){
             if((jogadas*2)==numero){
-                alert('Vitoria')
-                alert('seu numero de jogadas foi: '+jogardasfeitaas)
+                
+                alert("Você ganhou em "+jogardasfeitaas+" jogadas!")
                 let mais = prompt('quer jogar mais uma ? entao digite "sim"')
                 if(mais == 'sim'){
                     
